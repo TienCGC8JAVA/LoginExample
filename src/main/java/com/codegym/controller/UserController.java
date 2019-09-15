@@ -22,4 +22,9 @@ public class UserController {
   String showCreate(){
     return "create";
   }
+
+  @RequestMapping("/forgot-password")
+  String showForgotPassword(){
+    return  "forgot-password";
+  }
 }
