@@ -7,20 +7,18 @@ import javax.persistence.*;
 public class User {
 
   @Id
-  @GeneratedValue(strategy= GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer id;
   private String account;
   private String password;
-  private String name;
   private String email;
   private String avatar;
   private int birthday;
   private String address;
 
-  public User(String account, String password, String name, String email,String avatar, int birthday, String address) {
+  public User(String account, String password, String email,String avatar, int birthday, String address) {
     this.account = account;
     this.password = password;
-    this.name = name;
     this.email = email;
     this.avatar = avatar;
     this.birthday = birthday;
@@ -65,14 +63,6 @@ public class User {
 
   public void setPassword(String password) {
     this.password = password;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public String getEmail() {

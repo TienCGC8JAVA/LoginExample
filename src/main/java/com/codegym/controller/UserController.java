@@ -13,18 +13,15 @@ public class UserController {
     return "home";
   }
 
-  @RequestMapping("/login")
-  String showLogin(){
-    return "login";
-  }
-
-  @RequestMapping("/create")
+  @RequestMapping("/register")
   String showCreate(){
-    return "create";
+    return "register";
   }
 
   @RequestMapping("/forgot-password")
   String showForgotPassword(){
     return  "forgot-password";
   }
+
+
 }

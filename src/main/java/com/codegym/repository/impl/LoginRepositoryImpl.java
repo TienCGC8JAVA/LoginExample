@@ -1,29 +1,28 @@
 package com.codegym.repository.impl;
 
 import com.codegym.model.Login;
+import com.codegym.model.User;
 import com.codegym.repository.LoginRepository;
 
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 public class LoginRepositoryImpl implements LoginRepository {
 
-  @Override
-  public List<Login> findAll() {
-    return null;
-  }
+  @PersistenceContext
+  private EntityManager em;
 
   @Override
-  public Login findById(int id) {
-    return null;
-  }
-
-  @Override
-  public void save(Login model) {
-
-  }
-
-  @Override
-  public void remove(int id) {
-
+  public User checkLogin(Login login) {
+    TypedQuery<User> query = em.createQuery("select u from  User u where u.account=:account and u.password=:password",User.class);
+    query.setParameter("account", login.getAccount());
+    query.setParameter("password", login.getPassword());
+    try {
+      return query.getSingleResult();
+    } catch (NoResultException e){
+      return null;
+    }
   }
 }
