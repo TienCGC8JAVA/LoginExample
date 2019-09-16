@@ -1,4 +1,4 @@
 package com.codegym.service.impl;
 
-public class GeneralServiceImpl {
+public class LoginServiceImpl {
 }

@@ -1,11 +1,14 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-
+@Entity
+@Table(name = "user")
 public class User {
-  private int id;
+
+  @Id
+  @GeneratedValue(strategy= GenerationType.AUTO)
+  private Integer id;
   private String account;
   private String password;
   private String name;
@@ -24,11 +27,11 @@ public class User {
     this.address = address;
   }
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
