@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="/checkLogin">
+<form method="post" th:action="@{/checkLogin}" th:object="${login}">
     <fieldset>
         <legend>Login</legend>
         <table>
@@ -16,7 +16,7 @@
                     </label>
                 </td>
                 <td>
-                    <input type="text"/>
+                    <input type="text" th:field="*{account}" />
                 </td>
             </tr>
             <tr>
@@ -26,7 +26,7 @@
                     </label>
                 </td>
                 <td>
-                    <input type="password"/>
+                    <input type="password" th:field="*{password}"/>
                 </td>
             </tr>
             <tr>

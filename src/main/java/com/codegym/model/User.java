@@ -1,6 +1,7 @@
 package com.codegym.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
@@ -13,10 +14,13 @@ public class User {
   private String password;
   private String email;
   private String avatar;
-  private int birthday;
+  private Date birthday;
   private String address;
 
-  public User(String account, String password, String email,String avatar, int birthday, String address) {
+  public User() {
+  }
+
+  public User(String account, String password, String email, String avatar, Date birthday, String address) {
     this.account = account;
     this.password = password;
     this.email = email;
@@ -73,11 +77,11 @@ public class User {
     this.email = email;
   }
 
-  public int getBirthday() {
+  public Date getBirthday() {
     return birthday;
   }
 
-  public void setBirthday(int birthday) {
+  public void setBirthday(Date birthday) {
     this.birthday = birthday;
   }
 

@@ -4,6 +4,9 @@ public class Login {
   private String account;
   private String password;
 
+  public Login() {
+  }
+
   public Login(String account, String password) {
     this.account = account;
     this.password = password;
